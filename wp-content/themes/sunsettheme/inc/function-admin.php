@@ -18,9 +18,8 @@ function sunset_add_admin_page() {
 	add_submenu_page( 'alecaddd_sunset', 'Sunset CSS Options', 'Custom CSS', 'manage_options', 'alecaddd_sunset_css', 'sunset_theme_settings_page');
 	
 	
-	
 }
-add_action( 'admin_menu', 'sunset_add_admin_page' );
+
 
 
 
@@ -30,7 +29,9 @@ function sunset_theme_create_page() {
 }
 
 function sunset_theme_settings_page() {
+	require_once(get_template_directory().'/inc/templates/sunset-settings.php');
 	
-	echo '<h1>Sunset Custom CSS</h1>';
 	
 }
+
+add_action( 'admin_menu', 'sunset_add_admin_page' );
