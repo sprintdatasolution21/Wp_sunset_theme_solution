@@ -32,13 +32,17 @@ function sunset_custom_settings() {
 	register_setting( 'sunset-settings-group', 'twitter_handler', 'sunset_sanitize_twitter_handler' );
 	register_setting( 'sunset-settings-group', 'facebook_handler' );
 	register_setting( 'sunset-settings-group', 'gplus_handler' );
+	register_setting( 'sunset-settings-group', 'user_description' );
+	register_setting( 'sunset-settings-group', 'profile_picture' );
 	
 	add_settings_section( 'sunset-sidebar-options', 'Sidebar Option', 'sunset_sidebar_options', 'alecaddd_sunset');
 	
-	add_settings_field( 'sidebar-name', 'Full Name', 'sunset_sidebar_name', 'alecaddd_sunset', 'sunset-sidebar-options');
+	add_settings_field( 'sidebar-name', 'Full Name', 'sunset_sidebar_name', 'alecaddd_sunset', 'sunset-sidebar-options');	
 	add_settings_field( 'sidebar-twitter', 'Twitter handler', 'sunset_sidebar_twitter', 'alecaddd_sunset', 'sunset-sidebar-options');
 	add_settings_field( 'sidebar-facebook', 'Facebook handler', 'sunset_sidebar_facebook', 'alecaddd_sunset', 'sunset-sidebar-options');
 	add_settings_field( 'sidebar-gplus', 'Google+ handler', 'sunset_sidebar_gplus', 'alecaddd_sunset', 'sunset-sidebar-options');
+	add_settings_field( 'sidebar-user-description', 'User Description', 'sunset_sidebar_user_decription', 'alecaddd_sunset', 'sunset-sidebar-options');
+	add_settings_field( 'sidebar-profile-picture', 'Profile Picture', 'sunset_sidebar_profile', 'alecaddd_sunset', 'sunset-sidebar-options');
 }
 
 function sunset_sidebar_options() {
@@ -62,7 +66,15 @@ function sunset_sidebar_gplus() {
 	$gplus = esc_attr( get_option( 'gplus_handler' ) );
 	echo '<input type="text" name="gplus_handler" value="'.$gplus.'" placeholder="Google+ handler" />';
 }
+function sunset_sidebar_user_decription() {
+	$user_decription = esc_attr( get_option( 'user_decription' ) );
+	echo '<input type="text" name="user_decription" value="'.$user_decription.'" placeholder="User Description" />';
+}
 
+function sunset_sidebar_profile() {
+	$picture = esc_attr( get_option( 'profile_picture' ) );
+	echo '<input type="button" class="button button-secondary" value="Upload Profile Picture" id="upload-button"><input type="hidden" id="profile-picture" name="profile_picture" value="'.$picture.'" />';
+}
 //Sanitization settings
 function sunset_sanitize_twitter_handler( $input ){
 	$output = sanitize_text_field( $input );
