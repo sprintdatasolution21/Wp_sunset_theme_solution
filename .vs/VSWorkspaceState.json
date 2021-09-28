@@ -4,8 +4,10 @@
     "\\wp-content",
     "\\wp-content\\themes",
     "\\wp-content\\themes\\sunsettheme",
+    "\\wp-content\\themes\\sunsettheme\\css",
     "\\wp-content\\themes\\sunsettheme\\inc",
-    "\\wp-content\\themes\\sunsettheme\\inc\\templates"
+    "\\wp-content\\themes\\sunsettheme\\inc\\templates",
+    "\\wp-content\\themes\\sunsettheme\\js"
   ],
   "SelectedNode": "\\wp-content\\themes\\sunsettheme\\inc\\function-admin.php",
   "PreviewInSolutionExplorer": false
