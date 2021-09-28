@@ -1,10 +1,8 @@
-
-
-<?php
-    /**
-    * Template Name: Front Page
-    */
-?>
+<?php 
+	
+/*
+	Template Name: Page No Title
+*/
 	
 get_header(); ?>
 

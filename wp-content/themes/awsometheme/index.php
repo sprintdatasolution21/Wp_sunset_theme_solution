@@ -1,26 +1,17 @@
 <?php get_header(); ?>
 
-
-
-	<?php
+	<?php 
 	
 	if( have_posts() ):
 		
-
-		
 		while( have_posts() ): the_post(); ?>
-				<p><?php the_content(); ?></p>
-						<hr>
-			   <h3><?php the_title(); ?></h3>
+			
+			<?php get_template_part('content',get_post_format()); ?>
 		
 		<?php endwhile;
 		
-
-
-
 	endif;
 			
 	?>
-
 
 <?php get_footer(); ?>
