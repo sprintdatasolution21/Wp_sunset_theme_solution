@@ -16,11 +16,10 @@
 	
 	<body <?php body_class( $awesome_classes ); ?>>
 		
-		<div class="container">
+		<div class="container-fluid">
 		
-			<div class="row">
-				
-				<div class="col-xs-12">
+			<div class="row col-xs-12 col-sm-12">			
+		
 					
 					<nav class="navbar navbar-default">
 					  <div class="container-fluid">
@@ -44,10 +43,10 @@
 								);
 							?>
 						</div>
-					  </div><!-- /.container-fluid -->
+					  </div>
 					</nav>
 				
-				</div>
+		
 				
 			</div>
 			
